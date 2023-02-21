@@ -1,0 +1,24 @@
+<div *ngIf="contact">
+    <h2>{{ contact.firstName }}</h2>
+    <div>
+        First Name:
+        <input [(ngModel)]="contact.firstName" placeholder="First Name"/>
+    </div>
+    <div>
+        Last Name:
+        <input [(ngModel)]="contact.lastName" placeholder="Last Name"/>
+    </div>
+    <div>
+        Email:
+        <input [(ngModel)]="contact.email" placeholder="Email"/>
+    </div>
+    <div>
+        Phone Number:
+        <input [(ngModel)]="contact.phoneNumber" placeholder="Phone Number"/>
+    </div>
+
+    <button class="btn btn-success" (click)="updateContact(contact)" *ngIf="contact.id">Save</button>
+    <button class="btn btn-danger"(click)="deleteContact(contact)" *ngIf="contact.id">Delete</button>
+    <button class="btn btn-success" (click)="createContact(contact)" *ngIf="!contact.id">Create</button>
+
+</div>
